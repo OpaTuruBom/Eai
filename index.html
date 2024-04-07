@@ -56,16 +56,31 @@
 </body>
 
 <script>
-    const movedButton = document.querySelector('.nao');
-    movedButton.addEventListener('mouseover', moveButton);
-    movedButton.addEventListener('touchstart', moveButton);
-    movedButton.addEventListener('touchend', moveButton);
-    movedButton.addEventListener('touchmove', moveButton);
+    const videosLinks = ['https://www.youtube.com/watch?v=mBw3qzf4s18',
+                        'https://youtu.be/s5870NUUtfY?si=mHQGUHTAF_Vcjsjp',
+                        'https://youtu.be/bOIidQvr6FQ?si=vwpLvADKdJbTvcGT',
+                        'https://youtu.be/S06IYs3csWI?si=PGwbYc-3RGTc0Tno',
+                        'https://youtu.be/012HdMERnDU?si=B0RHpmi186BfCw2i',
+                        'https://www.youtube.com/watch?v=lJDtQPI5SOw',
+                        'https://www.youtube.com/watch?v=ybpRjw6XJsY',
+                        'https://www.youtube.com/watch?v=DwGRvXE5cH8',
+                        'https://www.youtube.com/watch?v=9xOi4hnfYTw',
+                        'https://www.youtube.com/watch?v=s4P4pmJysF0',
+                        'https://www.youtube.com/watch?v=2D91Bp71QSI']
+    const yesButton = document.querySelector('.sim');
+    let randomVideo = Math.round(Math.random()*(videosLinks.length-1));
+    yesButton.href = videosLinks[randomVideo]
+
+    const notButton = document.querySelector('.nao');
+    notButton.addEventListener('mouseover', moveButton);
+    notButton.addEventListener('touchstart', moveButton);
+    notButton.addEventListener('touchend', moveButton);
+    notButton.addEventListener('touchmove', moveButton);
 
     function moveButton(){
-        movedButton.style.position = 'absolute';
-        movedButton.style.left = Math.floor(Math.random()*(window.innerWidth - movedButton.offsetWidth)) + 'px';
-        movedButton.style.top = Math.floor(Math.random()*(window.innerHeight - movedButton.offsetHeight)) + 'px';
+        notButton.style.position = 'absolute';
+        notButton.style.left = Math.floor(Math.random()*(window.innerWidth - notButton.offsetWidth)) + 'px';
+        notButton.style.top = Math.floor(Math.random()*(window.innerHeight - notButton.offsetHeight)) + 'px';
     }
 </script>
 </html>
