@@ -68,8 +68,13 @@
                         'https://www.youtube.com/watch?v=s4P4pmJysF0',
                         'https://www.youtube.com/watch?v=2D91Bp71QSI']
     const yesButton = document.querySelector('.sim');
-    let randomVideo = Math.round(Math.random()*(videosLinks.length-1));
-    yesButton.href = videosLinks[randomVideo]
+
+    yesButton.addEventListener('click', changeLink)
+    changeLink()
+    function changeLink(){
+        let randomVideo = Math.round(Math.random()*(videosLinks.length-1));
+        yesButton.href = videosLinks[randomVideo]
+    }
 
     const notButton = document.querySelector('.nao');
     notButton.addEventListener('mouseover', moveButton);
